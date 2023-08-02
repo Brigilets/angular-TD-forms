@@ -12,7 +12,11 @@
               name="username"
               class="form-control"
               required
+              #username="ngModel"
             />
+            <span class="help-block" *ngIf="!username.valid && username.touched"
+              >Please enter a username.</span
+            >
           </div>
           <button class="btn btn-default" type="button">
             Suggest an Username
@@ -27,8 +31,12 @@
               class="form-control"
               required
               email
+              #email="ngModel"
             />
             <!-- email - built in angular validator -->
+            <span class="help-block" *ngIf="!email.valid && email.touched"
+              >Please enter a valid email</span
+            >
           </div>
         </div>
         <div class="form-group">
@@ -39,10 +47,14 @@
             id="secret"
             class="form-control"
             required
+            #secret="ngModel"
           >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
+          <span class="help-block" *ngIf="!secret.valid && secret.touched"
+            >Please select secret question</span
+          >
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
