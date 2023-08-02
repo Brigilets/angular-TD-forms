@@ -10,6 +10,7 @@ export class AppComponent {
   //remove f from onSubmit() in the template if using @ViewChild()
   @ViewChild('f') signupForm: NgForm;
   defaultQuestion = 'pet';
+  answer: string = '';
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
