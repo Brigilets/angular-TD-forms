@@ -11,6 +11,7 @@
               ngModel
               name="username"
               class="form-control"
+              required
             />
           </div>
           <button class="btn btn-default" type="button">
@@ -24,17 +25,28 @@
               type="email"
               id="email"
               class="form-control"
+              required
+              email
             />
+            <!-- email - built in angular validator -->
           </div>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select ngModel name="secret" id="secret" class="form-control">
+          <select
+            ngModel
+            name="secret"
+            id="secret"
+            class="form-control"
+            required
+          >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+          Submit
+        </button>
       </form>
     </div>
   </div>
