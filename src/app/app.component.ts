@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  genders = ['male', 'female', 'non-binary'];
   //remove f from onSubmit() in the template if using @ViewChild()
   @ViewChild('f') signupForm: NgForm;
   defaultQuestion = 'pet';
